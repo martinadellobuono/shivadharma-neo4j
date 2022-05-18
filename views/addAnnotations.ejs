@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GraphAnnotator</title>
+</head>
+<body>
+    <h1>Create your edition</h1>
+    <h2>2/3 Add annotations</h2>
+
+    <a href="/edition/<%= idEdition %>-<%= idEditor %>">Preview</a>
+
+    <br>
+    <br>
+
+    <form action="/addAnnotations" enctype="multipart/form-data" method="post">
+        <label>Upload a file</label>
+        <input type="file" name="upload">
+        <input type="submit" value="Submit">
+    </form>
+    
+    <br>
+    <p>or</p>
+    <br>
+
+    <label>Insert the base text here</label>
+    <br>
+    <textarea name="" rows="4" cols="50">
+    </textarea>
+
+</body>
+</html>
