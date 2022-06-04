@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>GraphAnnotator</title>
-</head>
+<%- include ("partials/head") %>
 <body>
-    <h1>Create your edition</h1>
-    <h2>1/3 Get started</h2>
-
-    <!-- metadata -->
-    <form method="post" action="/getstarted">
-        <label>Title of the edition</label>
-        <input type="text" name="title">
-        <label>Author of the edited work</label>
-        <input type="text" name="author">
-        <label>Editor</label>
-        <input type="text" name="editor">
-        <input type="submit" value="Submit">
-    </form>
-    
+    <%- include ("partials/navbar") %>
+    <div class="container-fluid pb-5 pt-5">
+        <div class="container text-center">
+            <h1>Śivadharma Database</h1>
+        </div>
+    </div>
+    <div class="container-fluid bg-light pb-5 pt-5">
+        <div class="container">
+            A Scholarly Digital Critical Edition is a conceptually and structurally sophisticated entity, not only because the text is “constrained by its sequential presentation”, but also because it is characterized by a multidimensional complexity. Editions of South Asian texts, in particular, contain a series of phenomena difficult to manage formally, such as the overlapping, which requires establishing the data structure best suited to represent this complexity. The present paper focuses on exploring a case study from the Śivadharma Database, an upcoming digital library of L’Orientale University of Naples, the École française d’Extrême-Orient, and the /DH.arc Research Centre of Alma Mater Studiorum University of Bologna. The results show that a tree structure is insufficient to handle the non-linearity of the readings of a text in South Asian languages, while the graph database Neo4j, used for a CRUD web application, is a better solution to structure and store data to create, publish, store, catalog, update, visualize, and browse Scholarly Digital Critical Editions. 
+        </div>
+    </div>
+    <%- include ("partials/footer") %>
+    <%- include ("partials/script") %>
 </body>
 </html>
