@@ -11,12 +11,6 @@ const router = express.Router();
 router.use(bodyParser.json());
 router.use(bodyParser.urlencoded({extended:false}));
 
-router.get("/addAnnotations/:id", async (req, res) => {
-    res.render("addAnnotations", {
-        id: req.params.id
-    });
-});
-
 router.post("/addAnnotations/:id", async (req, res) => {    
     var idEdition = req.params.id.split("/").pop().split("-")[0];
     var idEditor = req.params.id.split("/").pop().split("-")[1];
