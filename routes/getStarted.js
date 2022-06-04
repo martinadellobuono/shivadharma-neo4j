@@ -13,6 +13,7 @@ const { body, validationResult } = require("express-validator");
 
 router.post("/getstarted",
     /* error handling */
+    body("work").isLength({min: 1}).withMessage("title of the work"),
     body("title").isLength({min: 1}).withMessage("title of the edition"),
     body("author").isLength({min: 1}).withMessage("author of the edited text"),
     body("editor").isLength({min: 1}).withMessage("editor of the edition"),
@@ -29,10 +30,10 @@ router.post("/getstarted",
             const session = driver.session();
             try {
                 await session.writeTransaction(tx => tx
-                    .run("MERGE(edition:Edition {title: $title}) MERGE(author:Author {name: $author}) MERGE(editor:Editor {name: $editor}) MERGE(edition)-[w:WRITTEN_BY]->(author) MERGE (edition)-[e:EDITED_BY]->(editor) RETURN ID(edition), edition.title, author.name, w, ID(editor), editor.name, e", {title: req.body.title, author: req.body.author, editor: req.body.editor})
+                    .run("MERGE (work:Work {title: $work}) MERGE (edition:Edition {title: $title}) MERGE (author:Author {name: $author}) MERGE (editor:Editor {name: $editor}) MERGE (work)-[h:HAS_MANIFESTATION]->(edition) MERGE (work)-[w:WRITTEN_BY]->(author) MERGE (edition)-[e:EDITED_BY]->(editor) RETURN work.title, ID(edition), edition.title, author.name, ID(editor), editor.name", {work: req.body.work, title: req.body.title, author: req.body.author, editor: req.body.editor})
                     .subscribe({
                         onNext: record => {
-                            res.redirect("addAnnotations/" + record.get("ID(edition)") + "-" + record.get("ID(editor)"));
+                            res.redirect("addMetadata/" + record.get("ID(edition)") + "-" + record.get("ID(editor)"));
                         },
                         onCompleted: () => {
                             console.log("Data added to the graph");

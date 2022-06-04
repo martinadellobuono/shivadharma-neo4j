@@ -22,33 +22,27 @@ router.post("/addAnnotations/:id", async (req, res) => {
     var idEditor = req.params.id.split("/").pop().split("-")[1];
     var form = formidable();
     form.parse(req);
-    /* upload file */
     form.on("fileBegin", (name, file) => {
         file.path = `${__dirname}/../uploads/${file.name}`;
     });
-    /* post */
     form.on("file", async (name, file) => {
         const session = driver.session();
         try {
-            await session.writeTransaction(tx => tx
-                .run(`MATCH (editor:Editor) WHERE id(editor) = ${idEditor} MERGE (file:File {name: $file}) MERGE (file)-[p:PRODUCED_BY]->(editor) RETURN editor, file, p`, {file: file.name})                
-                .subscribe({
-                    onCompleted: () => {
-                        console.log("Data added to the graph");
-                    },
-                    onError: err => {
-                        console.log("Error related to the upload to Neo4j: " + err)
-                    }
-                })
+            const data = await session.writeTransaction(tx => tx
+                .run(`MATCH (editor:Editor) WHERE id(editor) = ${idEditor} MERGE (file:File {name: $file}) MERGE (file)-[p:PRODUCED_BY]->(editor) RETURN file.name`, {file: file.name})                
             );
+            const results = data.records.map(row => {
+                const file = row["_fields"];
+                return file;
+            });
+            res.render("addAnnotations", {
+                id: req.params.id,
+                file: results
+            });
         } catch (err) {
             console.log("Error related to Neo4j: " + err);
         } finally {
             await session.close();
-            res.render("addAnnotations", {
-                id: req.params.id,
-                file: file.name
-            });
         };
     });
     form.on("error", (err) => {

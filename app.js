@@ -22,6 +22,10 @@ app.use("/", initializeEdition);
 const getStarted = require("./routes/getStarted");
 app.use("/", getStarted);
 
+// addMetadata
+const addMetadata = require("./routes/addMetadata");
+app.use("/", addMetadata);
+
 // add annotations
 const addAnnotations = require("./routes/addAnnotations");
 app.use("/", addAnnotations);
