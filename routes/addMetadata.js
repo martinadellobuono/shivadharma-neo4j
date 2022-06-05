@@ -39,7 +39,7 @@ router.post("/addMetadata/:id", async (req, res) => {
     const session = driver.session();
     try {
         const data = await session.writeTransaction(tx => tx
-            .run(`MATCH (edition:Edition)-[e:EDITED_BY]->(editor:Editor) WHERE id(edition) = ${idEdition} AND id(editor) = ${idEditor} MATCH (work:Work)-[w:WRITTEN_BY]->(author:Author) SET author.name = "${req.body.author}" SET edition.title = "${req.body.title}" SET editor.name = "${req.body.editor}" MERGE (edition)-[p:PUBLISHED_ON]->(date {on: $date}) RETURN edition.title, editor.name, author.name, date.on`, {date: req.body.date})                
+            .run(`MATCH (edition:Edition)-[e:EDITED_BY]->(editor:Editor) WHERE id(edition) = ${idEdition} AND id(editor) = ${idEditor} MATCH (work:Work)-[w:WRITTEN_BY]->(author:Author) SET author.name = "${req.body.author}" SET edition.title = "${req.body.title}" SET editor.name = "${req.body.editor}" MERGE (date:Date {on: $date}) MERGE (edition)-[p:PUBLISHED_ON]->(date) MERGE (date)-[d:EDITION_BY]->(editor) RETURN edition.title, editor.name, author.name, date.on`, {date: req.body.date})                
         );
         const title = data.records[0]["_fields"][0]
         const author = data.records[0]["_fields"][1]
