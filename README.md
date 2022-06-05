@@ -21,7 +21,7 @@ After installing the required packages:
 
 - Download **Neo4j Desktop**: https://neo4j.com/download/
 - Create a new **Project**
-- Click on the button **Add**
+- Click on the **Add** button
 - Select **Remote connection**
 - Insert the **Connection URL**: bolt://localhost:7687
 - Insert the credentials:
