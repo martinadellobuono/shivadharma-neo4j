@@ -10,7 +10,7 @@ The project works with:
 - [**Node.js**](https://nodejs.org/en/) v16.14.2
 - [**Express**](https://www.npmjs.com/package/express)
 - [**body-parser**](https://www.npmjs.com/package/body-parser)
-- [**ejs**](https://www.npmjs.com/package/ejs)
+- [**ejs**](https://www.npmjs.com/package/ejs) v>=3.1.7
 - [**express-validator**](https://www.npmjs.com/package/express-validator)
 - [**formidable**](https://www.npmjs.com/package/formidable)
 - [**neo4j-driver**](https://www.npmjs.com/package/neo4j-driver)
