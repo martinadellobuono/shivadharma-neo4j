@@ -5,7 +5,7 @@ The project is ongoing and under development.
 
 ## Quick start
 
-Clone this repository using the URL: https://github.com/martinadellobuono/shivadharma-neo4j.git
+Clone this repository using the URL https://github.com/martinadellobuono/shivadharma-neo4j.git
 or download the folder.
 
 The project works with:
