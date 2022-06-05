@@ -15,7 +15,7 @@ The project works with:
 - [**body-parser**](https://www.npmjs.com/package/body-parser)
 - [**ejs**](https://www.npmjs.com/package/ejs)
 - [**express-validator**](https://www.npmjs.com/package/express-validator)
-- [**formidable**](https://www.npmjs.com/package/formidable)
+- [**formidable**](https://www.npmjs.com/package/formidable) v1.2.6 --> npm install formidable@v1.2.6
 - [**neo4j-driver**](https://www.npmjs.com/package/neo4j-driver)
 
 Packages can be installed with [**NPM**](https://www.npmjs.com/).
