@@ -128,7 +128,9 @@
                         </textarea>
                     </div>
                     <div>
-                        <a href="#" class="btn btn-primary" title="Save the annotations">Save the annotations</a>
+                        <% if (typeof file != 'undefined') { %>
+                            <a href="/edition/<%= id %>" class="btn btn-primary" title="Save the annotations">Save the annotations and publish</a>
+                        <% }; %>
                     </div>                
                 </div>
             </div>
