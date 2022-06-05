@@ -5,6 +5,9 @@ The project is ongoing and under development.
 
 ## Quick start
 
+Clone this repository using the URL: https://github.com/martinadellobuono/shivadharma-neo4j.git
+Or download the folder.
+
 The project works with:
 
 - [**Node.js**](https://nodejs.org/en/) v16.14.2
@@ -15,7 +18,7 @@ The project works with:
 - [**formidable**](https://www.npmjs.com/package/formidable)
 - [**neo4j-driver**](https://www.npmjs.com/package/neo4j-driver)
 
-Packages can be installed with either [**NPM**](https://www.npmjs.com/).
+Packages can be installed with [**NPM**](https://www.npmjs.com/).
 
 After installing the required packages:
 
