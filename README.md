@@ -32,3 +32,18 @@ After installing the required packages:
   **Password**: 123456
 - Run the application locally: **nodemon app.js**
 - Open the application in your browser: **http://0.0.0.0:3000/**
+
+## Neo4j Graph
+In the application it is possible to create and store data in the Neo4j database, where they are structured as a graph. To create data and check the resulting graph, it is necessary to:
+
+- Click on **Create an edition** in the navbar of the application.
+- Follow the required steps.
+- Open the database accessed via **Remote connection** in Neo4j Desktop.
+- Click on **Database Information** (first icon in the sidebar on the left).
+- Click on one of the **Node Labels** or **Relationship Types**.
+- A graph automatically appears in the body of the page.
+
+To browse the graph, it is possible to:
+
+- Use the tools provided by Neo4j on the user-side.
+- Run a [CYPHER](https://neo4j.com/developer/cypher/) query by inserting it in the bar above the graph and clicking on the rerun icon.
