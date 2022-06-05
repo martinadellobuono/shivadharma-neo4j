@@ -19,7 +19,7 @@ Packages can be installed with either [**NPM**](https://www.npmjs.com/).
 
 After installing the required packages:
 
-- Open the Neo4j Database in your browser: [**Neo4j Browser**] (http://localhost:7474/browser/)
+- Open the Neo4j Database in your browser: coming soon
 - Insert the credentials: 
   **Bolt URI**: bolt://localhost:7687
   **Username**: tpdl_user
