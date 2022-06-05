@@ -39,7 +39,7 @@ In the application it is possible to create and store data in the Neo4j database
 - Click on **Create an edition** in the navbar of the application.
 - Follow the required steps.
 - Open the database accessed via **Remote connection** in Neo4j Desktop.
-- Click on **Database Information** (first icon in the sidebar on the left).
+- Click on **Database Information** (first icon on the top of the sidebar on the left).
 - Click on one of the **Node Labels** or **Relationship Types**.
 - A graph automatically appears in the body of the page.
 
