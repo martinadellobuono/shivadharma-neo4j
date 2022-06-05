@@ -20,8 +20,11 @@ Packages can be installed with either [**NPM**](https://www.npmjs.com/).
 After installing the required packages:
 
 - Download **Neo4j Desktop**: https://neo4j.com/download/
-- Insert the credentials: 
-  **Connection URL**: bolt://localhost:7687
+- Create a new **Project**
+- Click on the button **Add**
+- Select **Remote connection**
+- Insert the **Connection URL**: bolt://localhost:7687
+- Insert the credentials:
   **Username**: neo4j
   **Password**: 123456
 - Run the application locally: **nodemon app.js**
