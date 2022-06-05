@@ -11,12 +11,12 @@ or download the folder.
 The project works with:
 
 - [**Node.js**](https://nodejs.org/en/) v16.14.2
-- [**Express**](https://www.npmjs.com/package/express)
-- [**body-parser**](https://www.npmjs.com/package/body-parser)
-- [**ejs**](https://www.npmjs.com/package/ejs)
-- [**express-validator**](https://www.npmjs.com/package/express-validator)
-- [**formidable**](https://www.npmjs.com/package/formidable) v1.2.6
-- [**neo4j-driver**](https://www.npmjs.com/package/neo4j-driver)
+- [**Express**](https://www.npmjs.com/package/express) > express@4.17.1
+- [**body-parser**](https://www.npmjs.com/package/body-parser) > body-parser@1.19.0
+- [**ejs**](https://www.npmjs.com/package/ejs) > ejs@3.1.6
+- [**express-validator**](https://www.npmjs.com/package/express-validator) > express-validator@6.14.0
+- [**formidable**](https://www.npmjs.com/package/formidable) > formidable@1.2.6 
+- [**neo4j-driver**](https://www.npmjs.com/package/neo4j-driver) > neo4j-driver@4.4.4
 
 Packages can be installed with [**NPM**](https://www.npmjs.com/).
 
